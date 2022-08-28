@@ -1,0 +1,174 @@
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0; /* so that background color of children can go all the way across */
+    margin: 0; /* so that background color of children can go all the way across */
+    background-color: var(--black);
+    font-family: var(--sans);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+    margin: 0 /* reset default margin so we can reset later */
+}
+a {
+    color: var(--magenta);
+}
+a:hover {
+    color: var(--hotmag);
+    text-decoration: none;
+}
+
+/* Intro */
+#intro {
+    padding: 4rem 1rem 10rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5; /* No unit */
+}
+#intro .name {
+    font-family: var(--mono);
+}
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: var(--aqua);
+    display: block;
+}
+#intro h2 {
+    font-size: 4rem;
+}
+
+/* Navbar */
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+nav h1 a {
+    font-family: var(--sans);
+}
+nav ul {
+    /* The top 3 here can be copied over to other navbar */
+    list-style-type: none; /* Turn off the bullet point */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block; /* To make the whole component clickable. This is only applicable to navbar*/
+}
+nav a:hover {
+    color: var(--magenta)
+}
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--aqua);
+}
+.button {
+    background-color: var(--magenta);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--white);
+    font-family: var(mono);
+    text-decoration: none;
+}
+.button:hover {
+    color: var(--white);
+    background-color: var(--hotmag);
+}
+/* min-width: 850px means the style within the block only applies when width >= 850px*/
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
+
+/* Contact */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--plum);
+    padding: 4rem;
+    border-style: solid;
+    border-color: var(--magenta);
+    border-left: 0.5px;
+    border-right: 0.5px;
+}
+#contact h3 {
+    font-size: 2rem;
+}
+#contact span {
+    display: block;
+    text-align: center;
+}
+#contact div {
+    width: 400px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 4rem;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 3rem;
+}
+
+footer .name {
+    font-size: 2rem;
+}
+
+footer .copyright {
+    font-size: 1rem;
+}
